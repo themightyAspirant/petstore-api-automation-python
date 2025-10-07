@@ -99,8 +99,8 @@ pip install -r requirements.txt
 Create a `.env` file in the root directory with the following content:
 
 ```env
-PETSTORE_API_BASEURL=https://petstore3.swagger.io/api
-PETSTORE_API_VERSION=v3
+PETSTORE_API_BASEURL=https://petstore.swagger.io
+PETSTORE_API_VERSION=v2
 ```
 
 **Note:** The `.env` file is required for the API client to function properly. Make sure to create this file before running tests.
