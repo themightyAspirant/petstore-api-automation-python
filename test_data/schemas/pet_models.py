@@ -1,6 +1,3 @@
-"""
-Simple Pydantic models for Petstore API.
-"""
 from typing import List, Optional
 from pydantic import BaseModel
 
@@ -17,8 +14,8 @@ class Tag(BaseModel):
 
 class PetResponse(BaseModel):
     id: int
-    category: Category
+    category: Optional[Category] = None
     name: str
-    photoUrls: List[str]
-    tags: List[Tag]
+    photoUrls: Optional[List[str]]
+    tags: Optional[List[Tag]]
     status: str

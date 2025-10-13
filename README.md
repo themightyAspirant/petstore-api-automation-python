@@ -1,5 +1,22 @@
 # petstore-api-automation-python
-A Python-based API automation framework for Swagger Petstore demonstrating best practices with Pytest, Requests, fixtures, and CI integration.
+An API automation framework built with Python. This framework uses the Swagger Petstore API for demonstration purposes and showcases a well-structured approach to API testing with proper separation of concerns.
+
+## Framework Structure
+
+The framework follows a clean architecture pattern with the following components:
+
+- **`client/`** - API client layer containing base client and specific API clients
+  - `base_client.py` - Abstract base class for HTTP operations
+  - `petstore_client.py` - Petstore-specific API client with all pet-related endpoints
+- **`tests/`** - Test cases organized by feature/module
+  - `pet/` - Pet-related test cases
+- **`helpers/`** - Utility functions and generators
+  - `pet_payload_generator.py` - Dynamic test data generation
+  - `dict_utils.py` - Dictionary manipulation utilities
+- **`test_data/`** - Test data and schemas
+  - `schemas/` - Data models and validation schemas
+- **`logger/`** - Centralized logging configuration
+- **`conftest.py`** - Pytest configuration and shared fixtures
 
 ## Prerequisites
 
@@ -104,3 +121,27 @@ PETSTORE_API_VERSION=v2
 ```
 
 **Note:** The `.env` file is required for the API client to function properly. Make sure to create this file before running tests.
+
+## Running Tests with Pytest
+
+### Basic Test Execution
+
+Run all tests:
+```bash
+pytest
+```
+
+Run tests with verbose output:
+```bash
+pytest -v
+```
+
+Run specific test file:
+```bash
+pytest tests/pet/test_pet_positive.py
+```
+
+Run specific test method:
+```bash
+pytest tests/pet/test_pet_positive.py::TestPetPositive::test_create_pet
+```
