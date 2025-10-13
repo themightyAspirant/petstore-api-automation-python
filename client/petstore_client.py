@@ -8,7 +8,7 @@ from logger.logger import get_logger
 class PetstoreClient(BaseClient):
     def __init__(self):
         _base_url = os.environ["PETSTORE_API_BASEURL"] + "/" + os.environ["PETSTORE_API_VERSION"]
-        self.logger = get_logger(__name__)
+        self.logger = get_logger(type(self).__name__)
         super().__init__(_base_url)
 
     # PET ENDPOINTS
